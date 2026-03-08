@@ -19,8 +19,8 @@
         "Typecheck passes"
       ],
       "priority": 1,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Next.js 16.1.6 scaffolded with App Router, TypeScript, Tailwind CSS v4. Playfair Display and Inter fonts configured. Custom color palette (sage, charcoal, offwhite, warmgray, gold) defined in globals.css @theme. Typography system set with serif headings and sans body. Build and typecheck pass."
     },
     {
       "id": "US-002",
@@ -38,8 +38,8 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 2,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Sticky header with transparent-to-solid background transition on scroll, backdrop blur, Playfair Display logo, desktop nav links with smooth scroll, sage green CTA button, mobile hamburger with animated icon and full-screen overlay. Build and typecheck pass."
     },
     {
       "id": "US-003",
