@@ -158,8 +158,8 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 8,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "FAQ accordion with 7 questions covering first session, insurance, session length, confidentiality, First Responder services, scheduling, and telehealth. Plus icon rotates to X on open, smooth expand/collapse animation, one item open at a time. Build and typecheck pass."
     },
     {
       "id": "US-009",
