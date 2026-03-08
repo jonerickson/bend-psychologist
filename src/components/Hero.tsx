@@ -1,45 +1,63 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-charcoal">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/60 to-charcoal" />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/hero-bg.jpg"
+        alt="Pacific Northwest river flowing through misty mountains and evergreen forest"
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
+        quality={85}
+      />
 
-      {/* Subtle texture / nature placeholder */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="h-full w-full bg-gradient-to-br from-sage/30 via-transparent to-gold/10" />
-      </div>
+      {/* Dark overlay for text contrast */}
+      <div className="absolute inset-0 bg-linear-to-b from-charcoal/70 via-charcoal/50 to-charcoal/80" />
+
+      {/* Extra vignette for depth */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(26,26,26,0.4)_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         {/* Micro label */}
-        <p className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-sage-light md:text-sm">
+        <p className="mb-8 inline-block border border-white/20 rounded-full px-5 py-1.5 text-[11px] font-medium uppercase tracking-[0.35em] text-white/80 backdrop-blur-sm md:text-xs">
           Bend, Oregon &middot; Licensed Psychologist
         </p>
 
         {/* Headline */}
-        <h1 className="font-serif text-5xl leading-tight text-white md:text-7xl lg:text-8xl">
+        <h1 className="font-serif text-5xl leading-[1.1] tracking-tight text-white md:text-7xl lg:text-[5.5rem]">
           Find Your Path
           <br />
-          <span className="text-sage-light">Forward</span>
+          <span className="bg-linear-to-r from-sage-light via-sage to-sage-light bg-clip-text text-transparent">
+            Forward
+          </span>
         </h1>
 
+        {/* Decorative line */}
+        <div className="mx-auto mt-8 h-px w-16 bg-linear-to-r from-transparent via-gold to-transparent" />
+
         {/* Subtitle */}
-        <p className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/70 md:text-xl">
+        <p className="mx-auto mt-8 max-w-2xl text-base font-light leading-relaxed text-white/70 sm:text-lg md:text-xl">
           Compassionate, evidence-based psychological services for individuals
-          navigating life&apos;s most demanding challenges. Specializing in
-          First Responder mental health.
+          navigating life&apos;s most demanding challenges.
+          <span className="mt-1 block font-normal text-white/90">
+            Specializing in First Responder mental health.
+          </span>
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
             href="#contact"
-            className="rounded-full bg-sage px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-white transition-all hover:scale-105 hover:bg-sage-dark"
+            className="group relative rounded-full bg-sage px-9 py-4 text-sm font-semibold uppercase tracking-widest text-white shadow-lg shadow-sage/25 transition-all duration-300 hover:scale-105 hover:bg-sage-dark hover:shadow-xl hover:shadow-sage/30"
           >
             Schedule a Consultation
           </a>
           <a
             href="#about"
-            className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-white transition-all hover:border-white/60 hover:bg-white/10"
+            className="rounded-full border border-white/25 px-9 py-4 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/10"
           >
             Learn More
           </a>
@@ -47,13 +65,21 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs uppercase tracking-widest text-white/40">
-            Scroll
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+        <a href="#about" className="flex flex-col items-center gap-3 group" aria-label="Scroll to content">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 transition-colors group-hover:text-white/60">
+            Discover
           </span>
-          <div className="h-10 w-px animate-pulse bg-gradient-to-b from-white/40 to-transparent" />
-        </div>
+          <svg
+            className="h-5 w-5 animate-bounce text-white/40 transition-colors group-hover:text-white/60"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.5}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </a>
       </div>
     </section>
   );
