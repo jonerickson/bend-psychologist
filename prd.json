@@ -78,8 +78,8 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 4,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "About section with off-white background, uppercase sage label, Playfair heading, two-column layout with photo placeholder (decorative accent border) and warm bio copy. Responsive stacking on mobile. Build and typecheck pass."
     },
     {
       "id": "US-005",
