@@ -59,8 +59,8 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 3,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Full-viewport hero with charcoal background, gradient overlays, Playfair Display headline with sage accent, subtitle, dual CTA buttons (primary sage + ghost outline), micro-label with tracking, animated scroll indicator. Fully responsive. Build and typecheck pass."
     },
     {
       "id": "US-004",
