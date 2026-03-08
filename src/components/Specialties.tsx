@@ -102,9 +102,7 @@ export default function Specialties() {
                   {step.number}
                 </div>
 
-                <h4 className="font-serif text-lg text-white">
-                  {step.title}
-                </h4>
+                <h4 className="font-serif text-lg text-white">{step.title}</h4>
                 <p className="mt-2 text-sm leading-relaxed text-white/50">
                   {step.description}
                 </p>

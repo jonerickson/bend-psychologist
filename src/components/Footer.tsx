@@ -21,8 +21,7 @@ export default function Footer() {
           {/* Practice info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <p className="font-serif text-xl text-white">
-              RiverFlow{" "}
-              <span className="text-sage-light">Psychology</span>
+              RiverFlow <span className="text-sage-light">Psychology</span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-white/50">
               Compassionate, evidence-based psychological services in Bend,

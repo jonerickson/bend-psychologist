@@ -30,7 +30,7 @@ export default function Hero() {
         <h1 className="font-serif text-5xl leading-[1.1] tracking-tight text-white md:text-7xl lg:text-[5.5rem]">
           Find Your Path
           <br />
-          <span className="bg-linear-to-r from-sage-light via-sage to-sage-light bg-clip-text text-transparent">
+          <span className="text-gold drop-shadow-[0_0_25px_rgba(196,169,98,0.4)]">
             Forward
           </span>
         </h1>
@@ -66,7 +66,11 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <a href="#about" className="flex flex-col items-center gap-3 group" aria-label="Scroll to content">
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-3 group"
+          aria-label="Scroll to content"
+        >
           <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 transition-colors group-hover:text-white/60">
             Discover
           </span>
@@ -77,7 +81,11 @@ export default function Hero() {
             stroke="currentColor"
             strokeWidth={1.5}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            />
           </svg>
         </a>
       </div>

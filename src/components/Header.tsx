@@ -20,7 +20,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -29,82 +28,104 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 shadow-sm backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
-      <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
-        aria-label="Main navigation"
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-white/95 shadow-sm backdrop-blur-md" : "bg-transparent"
+        }`}
       >
-        {/* Logo */}
-        <a href="#" className="font-serif text-xl tracking-tight lg:text-2xl">
-          <span className={scrolled ? "text-charcoal" : "text-white"}>
-            RiverFlow
-          </span>{" "}
-          <span className={scrolled ? "text-sage" : "text-sage-light"}>
-            Psychology
-          </span>
-        </a>
-
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-sage ${
-                scrolled ? "text-charcoal-light" : "text-white/80"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            className="rounded-full bg-sage px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-white transition-all hover:bg-sage-dark hover:scale-105"
-          >
-            Request Consultation
-          </a>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          className="md:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
+        <nav
+          className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+          aria-label="Main navigation"
         >
-          <div className="flex flex-col gap-1.5">
-            <span
-              className={`block h-0.5 w-6 transition-all duration-300 ${
-                scrolled ? "bg-charcoal" : "bg-white"
-              } ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
-            />
-            <span
-              className={`block h-0.5 w-6 transition-all duration-300 ${
-                scrolled ? "bg-charcoal" : "bg-white"
-              } ${mobileOpen ? "opacity-0" : ""}`}
-            />
-            <span
-              className={`block h-0.5 w-6 transition-all duration-300 ${
-                scrolled ? "bg-charcoal" : "bg-white"
-              } ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
-            />
-          </div>
-        </button>
-      </nav>
+          {/* Logo */}
+          <a href="#" className="font-serif text-xl tracking-tight lg:text-2xl">
+            <span className={scrolled ? "text-charcoal" : "text-white"}>
+              RiverFlow
+            </span>{" "}
+            <span className={scrolled ? "text-sage" : "text-sage-light"}>
+              Psychology
+            </span>
+          </a>
 
-      {/* Mobile overlay */}
+          {/* Desktop nav */}
+          <div className="hidden items-center gap-8 md:flex">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-sage ${
+                  scrolled ? "text-charcoal-light" : "text-white/80"
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="rounded-full bg-sage px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-white transition-all hover:bg-sage-dark hover:scale-105"
+            >
+              Request Consultation
+            </a>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            className="md:hidden"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={mobileOpen}
+          >
+            <div className="flex flex-col gap-1.5">
+              <span
+                className={`block h-0.5 w-6 ${
+                  scrolled ? "bg-charcoal" : "bg-white"
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 ${
+                  scrolled ? "bg-charcoal" : "bg-white"
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 ${
+                  scrolled ? "bg-charcoal" : "bg-white"
+                }`}
+              />
+            </div>
+          </button>
+        </nav>
+      </header>
+
+      {/* Mobile overlay — outside header so it's truly full-screen */}
       <div
-        className={`fixed inset-0 top-0 z-40 bg-charcoal transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-[60] bg-charcoal transition-opacity duration-300 md:hidden ${
           mobileOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
+        {/* Close button */}
+        <button
+          type="button"
+          onClick={() => setMobileOpen(false)}
+          aria-label="Close menu"
+          className="absolute top-5 right-6 p-2 text-white/70 transition-colors hover:text-white"
+        >
+          <svg
+            className="h-7 w-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
         <div className="flex h-full flex-col items-center justify-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -125,6 +146,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }

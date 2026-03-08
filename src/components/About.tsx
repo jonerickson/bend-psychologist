@@ -36,9 +36,9 @@ export default function About() {
             <p className="mt-6 text-lg leading-relaxed text-darktext">
               Dr. R. Andrew Barram, Psy.D., is a Licensed Psychologist bringing
               warmth, depth, and genuine care to every therapeutic relationship.
-              Growing up across the landscapes of Northern California and Eastern
-              Washington farmland, he developed an early appreciation for
-              resilience and the quiet strength found in community.
+              Growing up across the landscapes of Northern California and
+              Eastern Washington farmland, he developed an early appreciation
+              for resilience and the quiet strength found in community.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-darktext">
               After completing graduate studies and gaining experience in both

@@ -56,9 +56,7 @@ export default function Testimonials() {
               </p>
 
               <div className="mt-6 border-t border-warmgray pt-4">
-                <p className="font-medium text-charcoal">
-                  {testimonial.name}
-                </p>
+                <p className="font-medium text-charcoal">{testimonial.name}</p>
                 <p className="text-sm text-darktext/50">{testimonial.role}</p>
               </div>
             </div>
