@@ -201,8 +201,8 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 10,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Footer with dark charcoal background, 4-column layout (practice info, quick links, services, contact), subtle top border, copyright with dynamic year. Responsive stacking. Build and typecheck pass."
     },
     {
       "id": "US-011",
