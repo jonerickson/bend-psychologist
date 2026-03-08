@@ -98,8 +98,8 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 5,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Services section with 2x2 responsive card grid (Counseling, Evaluations, Consultation, Public Speaking). Each card has SVG icon, Playfair title, expanded copy, warmgray background, subtle border, hover scale and shadow. Build and typecheck pass."
     },
     {
       "id": "US-006",
